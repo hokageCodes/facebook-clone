@@ -78,7 +78,7 @@ export default function RegisterForm({ setVisible }) {
     try {
       const { data } = await axios.post(
 
-        "https://facebook-clone-production-5b37.up.railway.app/register",
+        "https://falsebook.onrender.com/register",
         {
           first_name,
           last_name,
