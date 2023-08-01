@@ -21,7 +21,7 @@ function App() {
     error: "",
   });
   useEffect(() => {
-    // getAllPosts();
+    getAllPosts();
   }, []);
   const getAllPosts = async () => {
     try {
