@@ -6,6 +6,7 @@ import ReactsPopup from "./ReactsPopup";
 import { useState } from "react";
 import CreateComment from "./CreateComment";
 import PostMenu from "./PostMenu";
+
 export default function Post({ post, user, profile }) {
   const [visible, setVisible] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
@@ -14,13 +15,13 @@ export default function Post({ post, user, profile }) {
     <div className="post" style={{ width: `${profile && "100%"}` }}>
       <div className="post_header">
         <Link
-          to={`/profile/${post.user.username}`}
+          to={`/profile/${post.user?.username}`}
           className="post_header_left"
         >
-          <img src={post.user.picture} alt="" />
+          <img src={post.user?.picture} alt="" />
           <div className="header_col">
             <div className="post_profile_name">
-              {post.user.first_name} {post.user.last_name}
+              {post.user?.first_name} {post.user?.last_name}
               <div className="updated_p">
                 {post.type == "profilePicture" &&
                   `updated ${
