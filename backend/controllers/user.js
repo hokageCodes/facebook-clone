@@ -12,6 +12,7 @@ const cloudinary = require("cloudinary");
 const { generateToken } = require("../helpers/tokens");
 const { sendVerificationEmail, sendResetCode } = require("../helpers/mailer");
 const generateCode = require("../helpers/generateCode");
+
 exports.register = async (req, res) => {
   try {
     const {

@@ -34,7 +34,7 @@ export default function LoginForm({ setVisible }) {
     try {
       setLoading(true);
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BACKEND_URL}/login`,
+        "https://facebook-clone-production-5b37.up.railway.app/login",
         {
           email,
           password,
@@ -98,6 +98,7 @@ export default function LoginForm({ setVisible }) {
           {error && <div className="error_text">{error}</div>}
           <div className="sign_splitter"></div>
           <button
+            type="submit"
             className="blue_btn open_signup"
             onClick={() => setVisible(true)}
           >
