@@ -20,9 +20,15 @@ function App() {
     posts: [],
     error: "",
   });
+
   useEffect(() => {
-    getAllPosts();
+    const timer = setTimeout(() => {
+      getAllPosts();
+    }, 4000); // 4 seconds delay
+
+    return () => clearTimeout(timer); // Clean up the timer on component unmount
   }, []);
+
   const getAllPosts = async () => {
     try {
       dispatch({
