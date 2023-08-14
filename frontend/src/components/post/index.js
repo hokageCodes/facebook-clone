@@ -23,13 +23,13 @@ export default function Post({ post, user, profile }) {
             <div className="post_profile_name">
               {post.user?.first_name} {post.user?.last_name}
               <div className="updated_p">
-                {post.type == "profilePicture" &&
+                {post.type === "profilePicture" &&
                   `updated ${
-                    post.user.gender === "male" ? "his" : "her"
+                    post.user?.gender === "male" ? "his" : "her"
                   } profile picture`}
-                {post.type == "coverPicture" &&
+                {post.type === "coverPicture" &&
                   `updated ${
-                    post.user.gender === "male" ? "his" : "her"
+                    post.user?.gender === "male" ? "his" : "her"
                   } cover picture`}
               </div>
             </div>
@@ -86,7 +86,7 @@ export default function Post({ post, user, profile }) {
       ) : post.type === "profilePicture" ? (
         <div className="post_profile_wrap">
           <div className="post_updated_bg">
-            <img src={post.user.cover} alt="" />
+            <img src={post.user?.cover} alt="" />
           </div>
           <img
             src={post.images[0].url}
